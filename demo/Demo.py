@@ -1,6 +1,6 @@
 import streamlit as st
 from PIL import Image
-image = Image.open('./demo/pages/acmelogo.png')
+image = Image.open('./demo/pages/acmelogo.jpeg')
 
 st.set_page_config(
     page_title="Hello",
@@ -8,7 +8,7 @@ st.set_page_config(
 )
 
 st.write("# Welcome to the LLM Chat! 👋")
-logo = Image.open('./demo/pages/acme.png')
+logo = Image.open('./demo/pages/acme.jpeg')
 st.sidebar.image(logo, width=300)
 st.sidebar.success("Select a chat above.")
 
