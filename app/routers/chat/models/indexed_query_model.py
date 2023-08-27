@@ -2,6 +2,7 @@ from typing import List
 from enum import Enum
 
 from pydantic import BaseModel, Field
+from llama_index.llms.base import ChatMessage
 
 from app.routers.chat.models.query_model import LlmEngine
 
@@ -16,7 +17,7 @@ class IndexedQuery(BaseModel):
     temperature: float = Field(ge=0, le=1, default=0)
     llm_engine: LlmEngine = LlmEngine.OPEN_AI
     model: str = "gpt-3.5-turbo"
-    prompt: str
+    chat_messages: List[ChatMessage]
     llama_context: LlamaContext
 
     class Config:
